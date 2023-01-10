@@ -43,6 +43,7 @@ let scrollPercent = 0
 lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
   if(scroll >= startMain) {
     scrollPercent = (scroll - startMain) / offsetHeightMain
+    
     DOM.main.setAttribute('style', `--progress:${scrollPercent}`)
   }
 
