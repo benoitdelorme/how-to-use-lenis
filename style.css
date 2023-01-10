@@ -1,0 +1,139 @@
+:root {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  src:
+    url('./MonaSans.woff2') format('woff2 supports variations'),
+    url('./MonaSans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+* {
+  font-family: Mona Sans;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
+}
+
+html {
+  scroll-behavior: initial;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
+}
+
+.c-main {
+  --progress: 0;
+  position: relative;
+  height: 300vh;
+  width: 100%;
+}
+
+.c-main_inner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  overflow: hidden;
+}
+
+.c-main_title {
+  position: relative;
+  font-size: 5vw;
+  font-stretch: ultra-expanded;
+  font-weight: 800;
+  line-height: 5vw;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  padding: 0;
+  transform: scale(calc(1 + var(--progress) * 70 ));
+  opacity: calc(1 - var(--progress) * 1.3);
+}
+
+.c-main_author {
+  font-size: 1.3vw;
+  font-stretch: ultra-expanded;
+  font-weight: 800;
+  color: greenyellow;
+  margin: 0.7rem 0 0;
+  text-shadow: 0 0 10px;
+  transform: translateY(calc(var(--progress) * 1200vh)) scale(calc(1 + var(--progress) * 70 ));
+}
+
+.c-triangle {
+  position: absolute;
+  display : inline-block;
+  height : 0;
+  width : 0;
+  border-right : 20px solid transparent;
+  border-bottom : 35px solid greenyellow;
+  border-left : 20px solid transparent;
+}
+
+.c-triangle.-tl {
+  top: -100px;
+  left: 0;
+  transform: rotate(47deg) scale(calc(0.6 + var(--progress) * 10 ));
+}
+
+.c-triangle.-br {
+  bottom: -100px;
+  right: 0;
+  transform: rotate(-131deg) scale(calc(0.6 + var(--progress) * 10 ));
+}
+
+.c-about {
+  height: 100vh;
+  width: 100%;
+  background: greenyellow;
+}
+
+.c-about_inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.c-about_title {
+  color: black;
+  font-weight: 800;
+  font-size: 2.7rem;
+  line-height: 3.7rem;
+}
